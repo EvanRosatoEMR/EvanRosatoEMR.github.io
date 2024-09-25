@@ -1,0 +1,63 @@
+/* Basic CSS resets -- leveling slight inconsistencies in browsers */
+html, body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+html {
+		/* Standard text-settings below */
+	font-size: 1em;
+    line-height: 1.4em;
+}
+
+
+
+
+body {
+	
+	background-color: #140424;
+	color: #ffffff;
+}
+
+
+#container {
+	
+}
+
+span#mountain {
+	
+	font-size: 2000px;
+	position: relative;
+	
+
+}
+
+p#tale {
+	
+	position: relative;
+	top: 700px;
+}
+
+span#head {
+	font-size: 50px;
+	position: relative;
+	left: 709px;
+	top: 40px;
+	
+}
+
+span#body {
+	font-size: 20px;
+	position: relative;
+	left: 697px;
+	top: 55px;
+}
+
+h1 {
+	font-family: "Tiny5", system-ui;
+	font-weight: 100;
+}
+
+
+
