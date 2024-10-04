@@ -27,9 +27,8 @@ body {
 	border: 5px solid rgb(255,255,255);
 	background: rgb(0,0,32);
 	width: 100%;
-	height: 100%;
+	height: 2600px;
 	max-width: 800px;
-	max-height: 1000px;
 	margin: auto;
 	padding: 10px;
 }
@@ -165,6 +164,8 @@ h3 {
 	
 	width: 200px;
 	height: 200px;
+	
+	margin: auto;
 }
 
 #crl3:hover {
