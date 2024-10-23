@@ -39,6 +39,8 @@ section {
 	background-color: rgba(21, 21, 201, 0.3);
 	color: rgb(222, 222, 222);
 	padding: 12px;
+	margin-top: 10px;
+	border: 5px solid rgba(21, 21, 201, 0.5);
 }
 
 #container {
