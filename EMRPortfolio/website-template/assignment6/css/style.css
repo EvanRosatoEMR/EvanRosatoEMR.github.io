@@ -17,7 +17,7 @@ html {
 
 body {
 	
-	background-image: url("../img/rockfamily.jpg");
+	background-image: url("../img/rockfamilyLong.jpg");
 	background-size: 100%;
 	background-repeat: repeat;
 }
@@ -64,8 +64,20 @@ You can adjust the min-width numbers below, and add as many new media queries as
 
 /* Minimum width for laptops. */
 @media all and (min-width: 769px) {
+
+body {
 	
+	background-image: url("../img/rockfamily.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+#container {
 	
+	width: 100%;
+	max-width: 700px;
+	margin: auto;
+}
 	
 	
 } /* closes 769px+ */
@@ -75,9 +87,30 @@ You can adjust the min-width numbers below, and add as many new media queries as
 
 /* Minimum width for desktop screens. */
 @media all and (min-width: 1024px) {
+
+#container {
 	
+	margin: 0px;
+}
+
+section {
 	
+	background-color: rgba(21, 21, 201, 0.3);
+	color: rgb(222, 222, 222);
+	padding: 0px;
+	margin-top: 0px;
+	border: 5px solid rgba(21, 21, 201, 0.5);
+}
+
+#OtherThoughts {
 	
+	float: left;
+}
+
+#MyThoughts {
+	
+	float: right;
+}
 	
 } /* closes 1024px+ */
 
