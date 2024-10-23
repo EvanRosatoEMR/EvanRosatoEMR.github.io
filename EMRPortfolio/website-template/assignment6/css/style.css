@@ -67,7 +67,7 @@ You can adjust the min-width numbers below, and add as many new media queries as
 
 body {
 	
-	background-image: url("../img/rockfamily.jpg");
+	background-image: url("../img/rockfamilyLong.jpg");
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
@@ -88,28 +88,41 @@ body {
 /* Minimum width for desktop screens. */
 @media all and (min-width: 1024px) {
 
-#container {
+body {
 	
-	margin: 0px;
+	background-image: url("../img/rockfamily.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+#container {
+	height: 100%;
+	max-width: 5000px;
+	margin: auto;
+
 }
 
 section {
 	
 	background-color: rgba(21, 21, 201, 0.3);
 	color: rgb(222, 222, 222);
-	padding: 0px;
-	margin-top: 0px;
+	padding: 12px;
+	margin: auto;
 	border: 5px solid rgba(21, 21, 201, 0.5);
+	width: 800px;
 }
 
 #OtherThoughts {
 	
 	float: left;
+	margin-left: 8px;
 }
 
 #MyThoughts {
 	
 	float: right;
+	margin-right: 8px;
 }
 	
 } /* closes 1024px+ */
