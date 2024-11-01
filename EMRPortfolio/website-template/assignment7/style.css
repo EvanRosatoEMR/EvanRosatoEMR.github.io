@@ -1,0 +1,103 @@
+html, body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+html {
+		/* Standard text-settings below */
+	font-size: 1em;
+    line-height: 1.4em;
+}
+
+body {
+	
+	font-family: "Lugrasimo", cursive;
+    font-weight: 400;
+    font-style: normal;
+	
+	background-color: #1e276b;
+	color: #fefefe;
+}
+
+#words {
+	
+	padding: 12px;
+	border: solid 2px white;
+	margin-top: 6px;
+}
+
+.video {
+	
+	padding: 12px;
+	border: solid 2px white;
+	margin-top: 6px;
+}
+
+#picture {
+	
+	padding: 0px;
+	border: solid 2px white;
+	margin: auto;
+	
+	width: 50%;
+}
+
+figure.video {
+    position: relative;
+    padding-bottom: 56.25%;  /* 16:9 */
+    height: 0px;
+    overflow: hidden;
+    max-width: 100%;
+	border: solid 2px white;
+}
+
+figure.video iframe {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+	border: solid 2px white;
+}
+
+
+
+/* Minimum width for laptops. */
+@media all and (min-width: 769px) {
+	
+main {
+	
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px;
+}
+
+#words {
+	
+	flex-grow: 1;
+	flex-basis: 200px;
+}
+
+.video {
+	
+	flex-grow: 3;
+	flex-basis: 160px;
+}
+
+#picture {
+	
+	flex-grow: 1;
+	flex-basis: 180px;
+}
+	
+} /* closes 769px+ */
+
+
+
+
+/* Minimum width for desktop screens. */
+@media all and (min-width: 1024px) {
+
+	
+} /* closes 1024px+ */
