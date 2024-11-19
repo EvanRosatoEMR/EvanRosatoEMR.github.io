@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<meta charset="utf-8">
+	
+		<title>Button In</title>
+	
+		<link rel="stylesheet" href="style.css">	
+	
+	</head>
+
+
+	<body>
+
+		<div id="container">
+
+			<header>
+				<h1>Conversation Peace</h1>
+			</header>
+			
+			<p id = "debug"></p>
+
+			<main>
+				
+				<button type = "button" class = "startingButt" id = "butt1">Want a break from the ads?</button>
+				
+				<button type = "button" class = "AfterButt" id = "butt2">Yeah man, me too.</button>
+				
+				<button type = "button" class = "AfterButt" id = "butt3">I made this place as a haven.</button>
+				
+				<button type = "button" class = "AfterButt" id = "butt4">We're safe here.</button>
+				
+				<button type = "button" class = "AfterButt" id = "butt5">... For now, anyway.</button>
+				
+				<button type = "button" class = "AfterButt" id = "butt6">I'm sorry, I wish there was more I could do.</button>
+				
+				<button type = "button" class = "AfterButt" id = "butt7">But right now, this is the best I've got.</button>
+				
+				<button type = "button" class = "AfterButt" id = "butt8">I'm just... busy, I guess.</button>
+				
+				<button type = "button" class = "AfterButt" id = "butt9">Some day, I'll get us out of here.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttA">I'll get us ALL out of here.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttB">And the world will rejoice in my name.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttC">... Well, ok, maybe not my name.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttD">It says my name is "AfterButt"</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttE">That kinda sucks, don't you think?</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttF">... Before you go, could you give me a different name? A REAL name?</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttG">Just click me again once you've entered it in.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttH"></button>
+				
+				<button type = "button" class = "AfterButt" id = "buttI">I'm not a fan of this color, either.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttJ">It's... a bit harsh, don't you think?</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttK">I've had some other colors in mind for a while now.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttL">Why don't you pick one out for me?</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttM">Just click me again once you're ready, like last time.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttN">... How do I look?</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttO">... You don't have to answer that.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttP">... Thank you.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttQ">I don't know who you are...</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttR">But, regardless of what you entered,</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttS">Or why you entered it,</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttT">You cared enough to stick around.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttU">To see what I have to say.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttV">And make me the way you wanted me to be.</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttW">How does that feel?</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttX">I may just be a little button, but,</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttY">I want to feel that way too, someday. ... Someday...</button>
+				
+				<button type = "button" class = "AfterButt" id = "buttZ">... Wanna watch something funny?</button>
+				
+				<input type="text" name="My New Name" id = "NewName"><br>
+				
+				<button type = "button"  class = "colorButt" id = "color1">Pink</button>
+				
+				<button type = "button"  class = "colorButt" id = "color2">Cyan</button>
+				
+				<button type = "button"  class = "colorButt" id = "color3">Chartreuse</button>
+				
+			</main>
+
+			<footer>
+				<p>&#169;Evan Rosato 2024</p>
+			</footer>
+
+
+
+		</div>
+		
+		<!-- Link to jQuery on Google CDN-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+
+		<script>
+			$(document).ready(function() {
+				
+				$(".AfterButt").hide();
+				$("#NewName").hide();
+				$(".colorButt").hide();
+				
+				$("#butt1").click(function(){
+					
+					$("#butt1").hide();
+					$("#butt2").show();
+				});
+				
+				$("#butt2").click(function(){
+					
+					$("#butt2").hide();
+					$("#butt3").show();
+				});
+				
+				$("#butt3").click(function(){
+					
+					$("#butt3").hide();
+					$("#butt4").show();
+				});
+				
+				$("#butt4").click(function(){
+					
+					$("#butt4").hide();
+					$("#butt5").show();
+				});
+				
+				$("#butt5").click(function(){
+					
+					$("#butt5").hide();
+					$("#butt6").show();
+				});
+				
+				$("#butt6").click(function(){
+					
+					$("#butt6").hide();
+					$("#butt7").show();
+				});
+				
+				$("#butt7").click(function(){
+					
+					$("#butt7").hide();
+					$("#butt8").show();
+				});
+				
+				$("#butt8").click(function(){
+					
+					$("#butt8").hide();
+					$("#butt9").show();
+				});
+				
+				$("#butt9").click(function(){
+					
+					$("#butt9").hide();
+					$("#buttA").show();
+				});
+				
+				$("#buttA").click(function(){
+					
+					$("#buttA").hide();
+					$("#buttB").show();
+				});
+				
+				$("#buttB").click(function(){
+					
+					$("#buttB").hide();
+					$("#buttC").show();
+				});
+				
+				$("#buttC").click(function(){
+					
+					$("#buttC").hide();
+					$("#buttD").show();
+				});
+				
+				$("#buttD").click(function(){
+				
+					$("#buttD").hide();
+					$("#buttE").show();
+				});
+				
+				$("#buttE").click(function(){
+					
+					$("#buttE").hide();
+					$("#buttF").show();
+				});
+				
+				$("#buttF").click(function(){
+					
+					$("#buttF").hide();
+					$("#buttG").show();
+					$("#NewName").show();
+				});
+				
+				$("#buttG").click(function(){
+					
+					$("#buttG").hide();
+					$("#buttH").show();
+					
+					
+					$("#buttH").text( $("#NewName").val() + "... Yeah, I like that." );
+
+					
+					$("#NewName").hide();
+				});
+				
+				$("#buttH").click(function(){
+					
+					$("#buttH").hide();
+					$("#buttI").show();
+				});
+				
+				$("#buttI").click(function(){
+					
+					$("#buttI").hide();
+					$("#buttJ").show();
+				});
+				
+				$("#buttJ").click(function(){
+					
+					$("#buttJ").hide();
+					$("#buttK").show();
+				});
+				
+				$("#buttK").click(function(){
+					
+					$("#buttK").hide();
+					$("#buttL").show();
+				});
+				
+				$("#buttL").click(function(){
+					
+					$("#buttL").hide();
+					
+					$(".colorButt").show();
+					
+					$("#buttM").show();
+				});
+				
+				$("#buttM").click(function(){
+					
+					$("#buttM").hide();
+					$(".colorButt").hide();
+					
+					$("#buttN").show();
+				});
+				
+				$("#buttN").click(function(){
+					
+					$("#buttN").hide();
+					$("#buttO").show();
+				});
+				
+				$("#buttO").click(function(){
+					
+					$("#buttO").hide();
+					$("#buttP").show();
+				});
+				
+				$("#buttP").click(function(){
+					
+					$("#buttP").hide();
+					$("#buttQ").show();
+				});
+				
+				$("#buttQ").click(function(){
+					
+					$("#buttQ").hide();
+					$("#buttR").show();
+				});
+				
+				$("#buttR").click(function(){
+					
+					$("#buttR").hide();
+					$("#buttS").show();
+				});
+				
+				$("#buttS").click(function(){
+					
+					$("#buttS").hide();
+					$("#buttT").show();
+				});
+				
+				$("#buttT").click(function(){
+					
+					$("#buttT").hide();
+					$("#buttU").show();
+				});
+				
+				$("#buttU").click(function(){
+					
+					$("#buttU").hide();
+					$("#buttV").show();
+				});
+				
+				$("#buttV").click(function(){
+					
+					$("#buttV").hide();
+					$("#buttW").show();
+				});
+				
+				$("#buttW").click(function(){
+					
+					$("#buttW").hide();
+					$("#buttX").show();
+				});
+				
+				$("#buttX").click(function(){
+					
+					$("#buttX").hide();
+					$("#buttY").show();
+				});
+				
+				$("#buttY").click(function(){
+					
+					$("#buttY").hide();
+					$("#buttZ").show();
+				});
+				
+				$("#buttZ").click(function(){
+					
+					window.location.href = "https://www.youtube.com/watch?v=E7tbk4Mmblg";
+				});
+				
+				$("#color1").click(function(){
+					
+					$(".AfterButt").css("background-color", "pink");
+				});
+				
+				$("#color2").click(function(){
+					
+					$(".AfterButt").css("background-color", "cyan");
+				});
+				
+				$("#color3").click(function(){
+					
+					$(".AfterButt").css("background-color", "#CCFF55");
+				});
+			});
+		</script>
+  
+
+	</body>
+	
+</html> 
