@@ -1,0 +1,283 @@
+html, body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+html {
+		
+	font-size: 1em;
+    line-height: 1.4em;
+}
+
+body {
+	
+  font-family: "Jomolhari", serif;
+  font-weight: 400;
+  font-style: normal;
+  
+  position: relative;
+  
+}
+
+.container {
+	
+	max-width: 3000px;
+	width: 100%;
+}
+
+.stylebar {
+	
+	
+}
+
+#MemContainer {
+	
+	background-color: black;
+	
+	max-height: 3000px;
+	height: 100%;
+}
+
+#MemContainer p {
+	
+	color: white;
+}
+
+h1 {
+	
+ font-family: "Oswald", serif;
+ font-optical-sizing: auto;
+ font-weight: <weight>;
+ font-style: normal;
+ 
+ color: white;
+ text-shadow: -1px -1px 0 #959EFF, 1px -1px 0 #959EFF, -1px 1px 0 #959EFF, 1px 1px 0 #959EFF;
+ 
+ font-size: 4em;
+ 
+ white-space: pre-line;
+ line-height: 200%;
+ text-align: center;
+	
+}
+
+p {
+	
+	color: black;
+	
+	white-space: pre-line;
+}
+
+#FixedHeader{
+
+ font-family: "Oswald", serif;
+ font-optical-sizing: auto;
+ font-weight: <weight>;
+ font-style: normal;
+
+background-color: #959EFF;
+color: black;
+
+max-height: 96px;
+height: 100%;
+
+max-width: 3000px;
+width: 100%;
+
+position: fixed;
+
+top: 0px;
+	
+}
+
+#FixedHeader.darkHeader {
+	
+	background-color: #222222;
+	color: white;
+}
+
+#FixedHeader img {
+	
+	float: left;
+}
+
+#FixedHeader a {
+	
+	color: black;
+	
+	float: right;
+	
+	font-size: 1.5em;
+	
+	padding: 20px;
+}
+
+#FixedHeader.darkHeader a {
+	
+	color: white;
+}
+
+#homebottles {
+	
+	margin-top: 150px;
+}
+
+#pjphoto {
+	
+	margin: auto;
+
+}
+
+#memoryLight {
+	
+	animation-name: rotateSimple;
+	animation-duration: 7s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+#MemoryMain {
+	
+	padding-top: 111px;
+}
+
+#promises {
+	
+	display: flex;
+	
+	justify-content: space-evenly;
+}
+
+#promises img {
+	
+	height: 200px;
+}
+
+#yourBottle {
+	
+	height: 100px;
+	display: none;
+	position: absolute;
+	z-index: 99999;
+}
+
+#myBottle {
+	
+	height: 100px;
+	display: inline;
+	position: absolute;
+	z-index: 99999;
+}
+
+#TheVirus {
+	
+	display: none;
+	position: absolute;
+	
+	height: 200px;
+	animation-name: squishReal, moveEasy1;
+	animation-duration: 1.2s, 4.3s;
+	animation-timing-function: ease-in-out, ease-in;
+	animation-iteration-count: infinite, infinite;
+	
+}
+
+#subDetails {
+	
+	display: none;
+	float: right;
+	overflow: hidden;
+	
+	max-height: 2000px;
+	height: 100%;
+	
+	width: 200px;
+}
+
+footer {
+	
+	background-color: #959EFF;
+	color: black;
+	
+	max-height: 30px;
+	height: 100%;
+
+	max-width: 3000px;
+	width: 100%;
+	
+	position: relative;
+	
+	bottom: 0px;
+	left: 0px;
+	
+	text-align: right;
+	vertical-align: center;
+}
+
+footer.darkFooter {
+	
+	background-color: #222222;
+}
+
+footer.darkFooter p {
+	
+	color: white;
+}
+
+@keyframes rotateSimple {
+	
+	0% {rotate: 0deg;}
+	50% {rotate: 180deg;}
+	100% {rotate: 360deg;}
+}
+
+@keyframes fadeIn {
+	
+	0% {background-image: linear-gradient(to right, rgba(0,0,0, 0.9) 0 100%), url(images/virusBackground1.gif);}
+	25% {background-image: linear-gradient(to right, rgba(0,0,0, 0.8) 0 100%), url(images/virusBackground1.gif);}
+	50% {background-image: linear-gradient(to right, rgba(0,0,0, 0.7) 0 100%), url(images/virusBackground1.gif);}
+	75% {background-image: linear-gradient(to right, rgba(0,0,0, 0.6) 0 100%), url(images/virusBackground1.gif);}
+	100% {background-image: linear-gradient(to right, rgba(0,0,0, 0.5) 0 100%), url(images/virusBackground1.gif);}
+}
+
+@keyframes squishReal {
+	
+	0% { height: 200px; rotate: 0deg;}
+	25% {height: 180px; rotate: 20deg;}
+	50% {height: 200px; rotate: 0deg;}
+	75% {height: 220px; rotate: -20deg;}
+	100% {height: 200px; rotate: 0deg;}
+}
+
+@keyframes moveEasy1 {
+	
+	0% {top: 0px; left: 0px;}
+	25% {top: 20vh; left: 10vw;}
+	50% {top: 55vh; left: 88vw;}
+	75% {top: 76vh; left: 12vw;}
+	100% {top: 0px; left: 0px;}
+}
+
+@keyframes moveEasy2 {
+	
+	0% {top: 0px; left: 0px;}
+	15% {top: 20vh; left: 10vw;}
+	30% {top: 55vh; left: 88vw;}
+	50% {top: 76vh; left: 12vw;}
+	65% {top: 76vh; left: 12vw;}
+	90% {top: 76vh; left: 12vw;}
+	100% {top: 0px; left: 0px;}
+}
+
+@keyframes moveEasy3 {
+	
+	0% {top: 0px; left: 0px;}
+	33% {top: 20vh; left: 10vw;}
+	66% {top: 55vh; left: 88vw;}
+	100% {top: 76vh; left: 12vw;}
+}
+
+@media all and (min-width: 1024px) {
+	
+}
