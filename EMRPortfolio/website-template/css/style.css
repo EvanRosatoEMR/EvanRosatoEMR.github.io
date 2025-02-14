@@ -25,9 +25,7 @@ body {
 
 #container {
 	border: 5px solid rgb(255,255,255);
-	background: rgb(32,0,32);
-	width: 100%;                            /* You can change this number */
-	max-width: 800px;                 /* You can change this number */
+	background: rgb(32,0,32);                /* You can change this number */
 	margin: auto;
 	padding: 10px;
 }
@@ -56,6 +54,53 @@ figure img {
 figcaption, footer {
 	font-size: 0.75em;
 }
+
+@media all and (min-width: 600px) {
+	
+#container {
+	
+	margin: 10px;
+	
+}
+	
+	
+} /* closes 600px+ */
+
+
+
+/* Minimum width for landscape laptops. */
+@media all and (min-width: 768px) {
+	
+	
+	
+	
+} /* closes 768px+ */
+
+
+
+/* Minimum width for larger tablets, laptops and desktops. */
+@media all and (min-width: 992px) {
+	
+	
+	
+	
+} /* closes 992px+ */
+
+
+
+/* Minimum width for larger desktops. */
+@media all and (min-width: 1200px) {
+	
+#container {
+	
+	width: 100%;
+	max-width: 1200px;
+	margin: 10px auto 10px auto;
+	
+}
+	
+	
+} /* closes 1200px+ */
 
 
 
