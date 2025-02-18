@@ -48,8 +48,10 @@ figure {
 }
 
 figure img {
-	width: 100%;
+	
+	width: 100%
 }
+	
 
 figcaption, footer {
 	font-size: 0.75em;
@@ -98,7 +100,12 @@ figcaption, footer {
 	margin: 10px auto 10px auto;
 	
 }
-	
+
+figure {
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+}
 	
 } /* closes 1200px+ */
 
