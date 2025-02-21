@@ -86,6 +86,16 @@ figcaption, footer {
 	margin: auto;
 }
 
+.mobile {
+	
+	display: block;
+}
+
+.desktop {
+	
+	display: none;
+}
+
 @media all and (min-width: 600px) {
 	
 #container {
@@ -161,6 +171,16 @@ figcaption, footer {
 	justify-content: center;
 	
 	
+}
+
+.mobile {
+	
+	display: none;
+}
+
+.desktop {
+	
+	display: block;
 }
 	
 } /* closes 768px+ */
