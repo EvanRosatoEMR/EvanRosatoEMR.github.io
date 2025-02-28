@@ -1,0 +1,177 @@
+/* Basic CSS resets -- leveling slight inconsistencies in browsers */
+html, body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+html {
+		/* Standard text-settings below */
+	font-size: 1em;
+    line-height: 1.4em;
+}
+
+
+
+
+body {
+	font-family: Helvetica, sans-serif;
+	background: #CDEFFF;
+	color: black;
+	
+	overflow-x: hidden;
+	
+}
+
+
+#container {
+	background-image: linear-gradient(#9ab6e2, #d0eeff);
+	
+	width: 100%;
+	max-width: 100vw;
+}
+
+#container p {
+	
+	text-align: center;
+}
+
+#banner {
+	
+	height: 540px;
+	
+	background-image: url("../img/banner.png");
+	background-repeat: no-repeat;
+	background-size: 100%, 100%;
+	
+}
+
+#title {
+	
+	position: absolute;
+	
+	width: 100vw;
+	
+	margin-left: 10vw;
+	margin-top: 10vh;
+	font-size: 3vw;
+	
+	font-family: "Tangerine", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#title h1 {
+	
+    font-weight: 700;
+}
+
+.content {
+	
+	position: relative;
+	background-color: #89b052;
+	
+	width: 100%;
+	max-width: 1200px;
+	height: 500px;
+	
+	margin: auto;
+	
+	padding: 20px;
+}
+
+#friend {
+	
+	max-width: 350px;
+	float: right;
+	
+	margin-right: 150px;
+	
+}
+
+#speechBubble {
+	
+	background-color: #f5d593;
+	
+	width: 100%;
+	max-width: 300px;
+	height: 150px;
+	
+	padding: 50px;
+	
+	margin-left: 150px;
+	margin-top: 70px;
+	border-radius: 25px;
+	
+}
+
+#sun {
+	
+	position: absolute;
+	max-width: 100px;
+	float: right;
+	
+	left: 55%;
+}
+
+#pad {
+	
+	width: 150px;
+	height: 15px;
+	
+	position: relative;
+	background-color: red;
+	border: 5px solid maroon;
+	
+	display: none;
+}
+
+#ball {
+	
+	width: 100px;
+	height: 100px;
+	
+	background-image: url("../img/sunPlay.png");
+	background-size: 100px;
+	
+	position: relative;
+	
+	top: 0px;
+	left: 55%;
+	
+	z-index: 10;
+	
+	display: block;
+	
+}
+
+ul {
+	list-style: none;
+	padding-left: 0px;
+}
+
+a {
+	color: rgb(0,0,0);
+}
+
+a:hover {
+	color: rgb(255,0,0);
+}
+
+figure {
+	margin-bottom: 10px;
+	
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+}
+
+figure img {
+	
+	width: 100%;
+}
+	
+
+figcaption, footer {
+	font-size: 0.75em;
+}

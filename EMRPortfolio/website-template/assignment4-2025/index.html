@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		
+		<title>Rosey Velt Mental Health</title>
+	
+		<link rel="stylesheet" href="css/style.css">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+		
+	
+	</head>
+	
+	<body>
+	
+		<div id="container">
+		
+			<header>
+				<div id="banner">
+			
+					<div id="title">
+						<h1>Rosey Velt Mental Health&trade;</h1>
+						<h2><em>Your health matters.&trade;</em></h2>
+					</div>
+			
+				</div>
+			</header>
+			
+			<main>
+			
+				<div id = "ball">
+				
+				</div>
+			
+				<div class="content">
+				
+					<figure id = "friend">
+						<img id = "face" src = "img/woman1.png" alt = "woman">
+					</figure>
+					
+					
+					<div id="speechBubble">
+						<p id="speech">Just a single call can change your life. Whether it's depression, trauma,
+						angst, relationship advice, medical help, or you just need someone to bitch to.
+						Help us make your world brighter. Your Health Matters&trade;</p>
+					</div>
+				
+				</div>	
+			
+			</main>
+			
+			<div id = "pad">
+			</div>
+			
+			<footer>
+				<p><em>&#169;Evan Rosato 2025.<em></p>
+			</footer>
+		
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				var grv = 1;
+				var Vspd = 0;
+				
+				var decel = 0.05;
+				var Hspd = 0;
+				var HspdCap = 10;
+				
+				var topSpeed = 35;
+				
+				var currentHits = 0;
+				var topHits = 0;
+				
+				var text = ["Oh, Hello there.", "You must be new here.", "Would you like to play with me?", "They say that staying healthy...", "Is a constant juggling act.",
+				"Let me show you what I mean.", "Move the paddle by moving your mouse.", "Keep the sun up as long as you can.", "Don't let it fall or hit any obstacles.",
+				"Ready?", "Go!"];
+				var whichText = 0;
+				var whichFace = true;
+				
+				var talking;
+				var mouthing;
+				var moving;
+				
+				setTimeout(stareTime, 10000);
+				
+				setTimeout(talkStart, 9000);
+				
+				setTimeout(changeStart, 12000);
+				
+				function talkStart() {
+				
+					talking = setInterval(talkTime, 3000);
+				}
+				
+				function changeStart() {
+				
+					mouthing = setInterval(changeTime, 250);
+				}
+				
+				function stareTime() {
+				
+					$("#face").attr("src", "img/woman2.png");
+					
+				}
+				
+				function talkTime() {
+				
+					$("#speech").text(text[whichText]);
+					whichText++;
+					
+					if (whichText == 7) {
+						
+						clearInterval(talking);
+						gameTime();
+					}
+					
+					if (whichText == 8) {
+						
+						$("#ball").text("That's me!");
+					} else {
+					
+						$("#ball").text("");
+					}
+					
+					if (whichText == 11) {
+					
+						clearInterval(talking);
+						clearInterval(mouthing);
+						sunTime();
+					}
+					
+				}
+				
+				function changeTime() {
+				
+					if (whichFace) {
+					
+						$("#face").attr("src", "img/woman3.png");
+					
+					} else {
+					
+						$("#face").attr("src", "img/woman2.png");
+					}
+					
+					whichFace = !whichFace;
+				}
+				
+				function gameTime() {
+					
+					talking = setInterval(talkTime, 4200);
+					$("#pad").css("display", "block");
+				
+				}
+				
+				function sunTime() {
+				
+					$("#ball").css("display", "block");
+					moving = setInterval(sunMove, 1);
+				}
+				
+				//have ball's movement update every millisecond.
+				
+				function sunMove() {
+				
+					// get bounding boxes for paddle and ball
+					var element1 = document.getElementById("ball");
+					var rect1 = element1.getBoundingClientRect();
+					
+					var element2 = document.getElementById("pad");
+					var rect2 = element2.getBoundingClientRect();
+					
+					//check if paddle and ball collide
+					if (rect1.right < rect2.left || rect1.left > rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom) {
+					
+						//$("#pad").text("nope");
+					} else {
+						
+						//make ball bounce up
+						Vspd = Vspd * -1;
+						currentHits++;
+						
+						paddleShrink();
+						
+						//make ball bounce left or right depending on where on the paddle it lands
+						if (rect1.left < rect2.right && rect1.left > rect2.left) {
+						
+							var diff = (rect1.left - rect2.left) / HspdCap;
+						
+						} else if (rect1.left < rect2.left && rect1.right > rect2.left) {
+						
+							var diff = ((rect2.left - rect1.left) / HspdCap) * -1;
+							
+						}
+						
+						Hspd = diff;
+						
+						if (currentHits >= topHits) {
+						
+							topHits = currentHits;
+						}
+						
+						$("#speech").text("Current Score: " + currentHits.toString() + " High Score: " + topHits.toString());
+						
+					}
+					
+					//the part that sets the new vertical and horizontal speeds
+					var currentLeft = $("#ball").css("left");
+					var trueLeft = parseInt(currentLeft);
+						
+					$("#ball").css("left", trueLeft + Hspd);
+					
+					if (Hspd > 0) {
+					
+						Hspd -= decel;
+						
+					} else if (Hspd < 0) {
+					
+						Hspd += decel;
+						
+					} else {
+					
+						Hspd = 0;
+						
+					}
+				
+					var currentHeight = $("#ball").css("top");
+					var trueHeight = parseInt(currentHeight);
+					
+					$("#ball").css("top", trueHeight + Vspd);
+					
+					if (Vspd < topSpeed) {
+						Vspd += grv;
+						
+					} else {
+					
+						Vspd = topSpeed;
+					}
+					
+					//check if ball is out of bounds
+					
+					var windWidth = $(window).width();
+					var windHeight = $(window).height();
+					var wid = $("#ball").css("width");
+					var trueWid = parseInt(wid);
+					
+					if (rect1.right > windWidth) {
+						
+						$("#ball").css("left", windWidth - trueWid);
+						Hspd *= -1;
+					
+					} else if (rect1.left < 0) {
+						
+						$("#ball").css("left", "0px");
+						Hspd *= -1;
+						
+					} else if (rect1.top > windHeight) {
+					
+						$("#ball").css("top", windHeight / 2);
+						$("#ball").css("left", windWidth / 2);
+						
+						Hspd = 0;
+						Vspd = 0;
+						
+						currentHits = 0;
+						
+						$("#speech").text("Current Score: " + currentHits.toString() + " High Score: " + topHits.toString());
+						$("#pad").css("width", 150);
+					}
+					
+				}
+				
+				function paddleShrink() {
+				
+					var wid = $("#pad").css("width");
+					var trueWid = parseInt(wid);
+					
+					
+					if (trueWid >= 20) {
+						if (currentHits % 10 == 0) {
+					
+							trueWid -= 3;
+						
+						}
+					
+						if (currentHits % 5 == 0) {
+					
+							trueWid -= 2;
+						
+						}
+					}
+					
+					$("#pad").css("width", trueWid);
+				}
+				
+				//make paddle follow mouse movement
+				$(document).on("mousemove", function (event) {
+					
+					var wid = $("#pad").css("width");
+					var trueWid = parseInt(wid);
+					$("#pad").css("left", (event.pageX - (trueWid / 2)));
+				}); 
+			
+			});
+		</script>
+	
+	</body>
+
+</html>
