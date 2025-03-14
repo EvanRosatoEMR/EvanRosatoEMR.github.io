@@ -1,0 +1,65 @@
+/* Basic CSS resets -- leveling slight inconsistencies in browsers */
+html, body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+html {
+		/* Standard text-settings below */
+	font-size: 1em;
+    line-height: 1.4em;
+}
+
+body {
+	
+	background-color: #7d80c5;
+	
+}
+
+main {
+	
+	height: 300px;
+}
+
+#container {
+	
+	background-color: #aec5e9;
+	
+	padding: 20px;
+	
+	text-align: center;
+	
+	
+}
+
+#TheButton {
+	
+	background-image: radial-gradient(#af2f40, #880940);
+	color: white;
+	
+	width: 100%;
+	max-width: 300px;
+	
+	height: 100%;
+	max-height: 300px;
+	
+	border-radius: 50%;
+	border-width: 5px;
+	
+	font-size: 2em;
+}
+
+#TheButton:hover {
+	
+	background-image: radial-gradient(#880940);
+}
+
+@media all and (min-width: 600px) {
+}
+
+@media all and (min-width: 768px) {
+}
+
+@media all and (min-width: 1200px) {
+}

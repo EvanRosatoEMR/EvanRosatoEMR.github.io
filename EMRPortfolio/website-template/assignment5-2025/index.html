@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		
+		<title>Don't Press The Button</title>
+	
+		<link rel="stylesheet" href="css/style.css">
+	
+	</head>
+	
+	<body id = "ass">
+	
+		<div id = "container">
+		
+			<header>
+				<h1>Don't Press The Button</h1>
+				<h2>Please</h2>
+			</header>
+			
+			<main>
+				<button id = "TheButton" type="button">The Button</button>
+			</main>
+			
+			<footer>
+				&#169;NotPressingButtons Inc. 2025
+			</footer>
+		
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				checkCookie();
+					
+				$("#TheButton").on("mousedown", function() {
+				
+					$("#TheButton").css("background-image", "radial-gradient(#611b31)");
+					
+				});
+				
+				$("#TheButton").on("mouseup", function() {
+				
+					$("#TheButton").css("background-image", "radial-gradient(#880940)");
+					
+				});
+				
+				$("#TheButton").hover(function() {
+				
+					$("#TheButton").css("background-image", "radial-gradient(#880940)");
+					
+				}, function() {
+				
+					$("#TheButton").css("background-image", "radial-gradient(#af2f40, #880940)");
+				});
+				
+				$("#TheButton").click(function(){
+					
+					document.cookie = "username=asshole; expires=Thu, 18 Dec 2099 12:00:00 UTC"
+					checkCookie();
+				
+				}); 
+				
+				function getCookie(cname) {
+					let name = cname + "=";
+					let ca = document.cookie.split(';');
+					for(let i = 0; i < ca.length; i++) {
+						let c = ca[i];
+						while (c.charAt(0) == ' ') {
+							c = c.substring(1);
+						}
+						if (c.indexOf(name) == 0) {
+							return c.substring(name.length, c.length);
+						}
+					}
+					return "";
+				}
+				
+				function checkCookie() {
+					let user = getCookie("username");
+					if (user != "") {
+						
+						$("#container").css("display", "none");
+						$("#ass").css("background-image", "url(" + "img/really.png" + ")");
+						$("#ass").css("background-repeat", "no-repeat");
+						$("#ass").css("background-size", "100%");
+					}
+				}
+				
+			});
+		</script>
+	
+	</body>
+
+</html>
