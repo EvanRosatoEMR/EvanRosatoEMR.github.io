@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		
-		<title>xxx</title>
+		<title>Parallax Scrolling Test</title>
 	
 		<link rel="stylesheet" href="css/style.css">
 	
@@ -19,11 +19,30 @@
 		<div id = "container">
 		
 			<header>
-				<h1>xxx</h1>
-				<h2>xxx</h2>
+				<h1 id = "title">Parallax Scrolling Test</h1>
+				<h2 id = "subtitle">Scroll and see what happens!</h2>
 			</header>
 			
+			<audio id="myAudio">
+				<source src="audio/YEA.ogg" type="audio/ogg">
+				Tough luck, shithead! It looks like your browser doesn't support the "audio" tag!
+			</audio>
+			
 			<main>
+			
+				<div class = "parallax" id = "bg1"></div>
+			
+			
+				<p>As a college student without a stable income, going back and forth halfway across the country every semester, 
+				it’s been hard for me to find a job that sticks for more than a few months. Blemishes on my resume that I think about whenever I try to apply for work. 
+				I’ve had to rely on my parent’s money and tax refund checks from the school for this semester, as I got a job quite late last summer.</p>
+				
+				<div class = "parallax" id = "bg2"></div>
+				
+				<p>I know that I’m not the only one struggling for work. Even for just 1 of the few jobs I’d need in order to afford housing in the future, 
+				it hasn’t been easy. I don’t feel like I’m learning many of the necessary skills in order to land a job in my field, even from this class. 
+				I feel like my knowledge of Web Development hasn’t progressed much since High School, forcing me to work in other fields to raise money, 
+				thus decreasing my time to actually hone the skills I’m going to school for.</p>
 				
 			</main>
 			
@@ -38,6 +57,45 @@
 		<script>
 			$(document).ready(function() {
 				
+				if ($(window).scrollTop() >= 1500) {
+
+					
+				} else if ($(window).scrollTop() >= 1000) {
+
+					$("#container").css("background-color", "red");
+					
+				} else if ($(window).scrollTop() >= 100) {
+					
+					$("#container").css("background-color", "gray");
+					
+				}
+				
+			});
+			
+			$(window).scroll(function() {
+			
+				if ($(window).scrollTop() >= 1500) {
+					
+					var yes = document.getElementById("myAudio");
+			
+					yes.play();
+					
+					alert("Hooray! You've scrolled a total of " + $(window).scrollTop() + " pixels! I hope you're proud of yourself. (If you didn't hear a sound playing, make your your browser's autoplay permissions are turned on!");
+					
+				} else if ($(window).scrollTop() >= 1000) {
+
+					$("#container").css("background-color", "red");
+					
+				} else if ($(window).scrollTop() >= 100) {
+					
+					$("#container").css("background-color", "gray");
+					$("#title").text("Did you miss something?");
+					$("#subtitle").text("Don't worry, I'm not going anywhere.");
+					
+				}
+				
+				//Maybe if you have time, make it so the background gradually changes color as you scroll down
+			
 			});
 		</script>
 	

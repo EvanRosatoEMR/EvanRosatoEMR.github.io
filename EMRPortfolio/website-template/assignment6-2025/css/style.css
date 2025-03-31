@@ -13,18 +13,18 @@ html {
 
 body {
 	
-	background-color: #7d80c5;
+	background-color: black;
 	
 }
 
 main {
 	
-	height: 300px;
+	height: 100%;
 }
 
 #container {
 	
-	background-color: #aec5e9;
+	background-color: gray;
 	
 	padding: 20px;
 	
@@ -33,11 +33,36 @@ main {
 	
 }
 
-@media all and (min-width: 600px) {
+#bg1 {
+	
+	background-image: url("../img/redSoulpfp.png");
 }
 
-@media all and (min-width: 768px) {
+#bg2 {
+	
+	background-image: url("../img/redvoxremember.png");
 }
 
-@media all and (min-width: 1200px) {
+.parallax {
+
+  /* Set a specific height */
+  height: 100%;
+  min-height: 1000px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media all and (min-width: 992px) {
+	
+	#container {
+		
+		width: 100%;
+		max-width: 900px;
+		
+		margin: auto;
+	}
 }
