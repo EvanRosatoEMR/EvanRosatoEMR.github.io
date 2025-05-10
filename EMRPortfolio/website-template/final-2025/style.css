@@ -1,0 +1,97 @@
+html, body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+}
+
+html {
+		/* Standard text-settings below */
+	font-size: 1em;
+    line-height: 1.4em;
+}
+
+body {
+	
+	background-color: #517883;
+	
+}
+
+#bigMain {
+	
+	height: 650px;
+	
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px;
+}
+
+#bigMain > div {
+	
+	background-color: #C8C4BC;
+	
+	font-size: 50px;
+	text-align: center;
+	padding: 10px;
+}
+
+#timer {
+	grid-column: 1 / span 5;
+	
+	height: 100px;
+}
+
+#cash {
+	grid-column: 6 / span 1;
+	
+	height: 100px;
+}
+
+#taskBar {
+	grid-column: 1 / span 1;
+	grid-row: 2 / span 3;
+    
+    height: 400px;
+	
+	margin-bottom: 40px;
+}
+
+#tasks {
+	grid-column: 2 / span 3;
+    grid-row: 2 / span 3;
+	
+	height: 400px;
+}
+
+#sideBar {
+	grid-column: 5 / span 2;
+    grid-row: 2 / span 3;
+	
+	height: 400px;
+}
+
+#news {
+	grid-column: 1 / span 6;
+    grid-row: 5 / span 5;
+	
+	height: 50px;
+}
+
+#container {
+	
+	background-color: red;
+	
+	padding: 20px;
+	margin: auto;
+	
+	width: 100%;
+	max-width: 1400px;
+	
+	text-align: center;
+	
+	
+}
+
+footer {
+	
+	height: 10px;
+}
