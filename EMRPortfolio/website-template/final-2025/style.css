@@ -16,6 +16,46 @@ body {
 	
 }
 
+@font-face {
+  font-family: PC;
+  src: url(0rBF94W.ttf);
+}
+
+.nanum-gothic-regular {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.windowHeader {
+	
+	background-color: blue;
+	position: relative;
+	font-size: 20px;
+	text-align: left;
+	padding-left: 10px;
+	top: -30px;
+	left: -10px;
+	width: 3000px;
+	color: white;
+}
+
+.pcFont {
+	font-family: PC;
+}
+.greenPart{
+	
+	background-color: #7C8E87;
+	
+	height: 80%;
+	
+	position: relative;
+	
+	margin: 10px;
+	
+	border: 2px solid #3C4E47;
+}
+
 #bigMain {
 	
 	height: 650px;
@@ -32,6 +72,12 @@ body {
 	font-size: 50px;
 	text-align: center;
 	padding: 10px;
+	
+	border: 2px solid #a8a49C;
+	box-shadow: 2px 2px;
+	
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 #timer {
@@ -40,10 +86,32 @@ body {
 	height: 100px;
 }
 
+#timeDisplay {
+	
+	position: relative;
+	top: -40px;
+	
+	font-size: 24px;
+}
+
 #cash {
 	grid-column: 6 / span 1;
 	
 	height: 100px;
+}
+
+#cashCounter {
+	
+	top: -40px;
+	
+	position: relative;
+}
+
+#cashDisplay {
+	
+	top: -20px;
+	
+	position: relative;
 }
 
 #taskBar {
@@ -60,6 +128,8 @@ body {
     grid-row: 2 / span 3;
 	
 	height: 400px;
+	width: 100%;
+	max-width: 700px;
 }
 
 #sideBar {
@@ -69,6 +139,50 @@ body {
 	height: 400px;
 }
 
+#shopMenu {
+	
+	display: none;
+}
+
+#backButton {
+	display: inline;
+	
+	position: relative;
+	background-color: #83515f;
+	border: 2px solid #43111f;
+	color: #C8C4BC;
+	
+	display: none;
+	
+	float: left;
+	
+}
+
+#backButton:active {
+	background-color: #43111f;
+	border: 2px solid #83515f;
+	
+}
+
+.sideOption {
+	
+	background-color: #83515f;
+	border: 2px solid #43111f;
+	color: #C8C4BC;
+	font-size: 24px;
+	
+	text-align: center;
+	
+	height: 50px;
+	
+}
+
+.sideOption:active {
+	
+	background-color: #43111f;
+	border: 2px solid #83515f;
+}
+
 #news {
 	grid-column: 1 / span 6;
     grid-row: 5 / span 5;
@@ -76,9 +190,24 @@ body {
 	height: 50px;
 }
 
+#newsText {
+	top: -65px;
+	font-size: 26px;
+	
+	position: relative;
+	
+	display: inline-block;
+	
+	/*animation-name: newsScroll;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;*/
+	
+}
+
 #container {
 	
-	background-color: red;
+	/*background-color: red;*/
 	
 	padding: 20px;
 	margin: auto;
@@ -91,7 +220,33 @@ body {
 	
 }
 
+#clicky {
+	
+	width: 100px;
+	height: 100px;
+	
+	background-image: url("file.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: relative;
+	margin: auto;
+	
+	margin-top: 10%;
+	
+	font-size: 16px;
+}
+
+#clicky:active {
+	
+	width: 95px;
+	height: 95px;
+}
+
 footer {
 	
 	height: 10px;
+	
+	margin: 50px;
+	color: white;
+	position: relative;
 }

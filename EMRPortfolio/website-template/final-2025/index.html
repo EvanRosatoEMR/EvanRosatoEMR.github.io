@@ -24,38 +24,205 @@
 			<main id = "bigMain">
 			
 				<div id = "timer">
-				1
+					<header class = "windowHeader nanum-gothic-regular">
+						<p>TIMER 2000</p>
+					</header>
+					
+					<main id = "timeDisplay" class = "greenPart pcFont">
+					
+						<p id = "timeText" style = "position: relative; user-select: none;"></p>
+					
+					</main>
+					
 				</div>
 				
 				<div id = "cash">
-				2
+					<header class = "windowHeader nanum-gothic-regular">
+						<p>CASH COUNTER</p>
+					</header>
+					
+					<main id = "cashCounter" class = "greenPart">
+						<p id = "cashDisplay" class = "pcFont">$0.00</p>
+					</main>
 				</div>
 				
 				<div id = "taskBar">
-				3
+					<header class = "windowHeader nanum-gothic-regular">
+						<p>TASK LIST</p>
+					</header>
+					
+					<main class = "greenPart pcFont">
+						<p></p>
+					</main>
 				</div>
 				
 				<div id = "tasks">
-				4
+					<header class = "windowHeader nanum-gothic-regular">
+						<p>TASK MASTER</p>
+					</header>
+					
+					<main class = "greenPart pcFont">
+						<div id = "clicky">
+						</div>
+					</main>
 				</div>
 				
 				<div id = "sideBar">
-				5
+					<header class = "windowHeader nanum-gothic-regular">
+						<p>UTILITRON</p>
+						<button id = "backButton" class = "pcFont" type = "button" >Back</button>
+					</header>
+					
+					<main class = "greenPart pcFont">
+						<div id = "shopButton" class = "sideOption mainButton">
+							<p style = "position: relative; top: -16px; user-select: none;">Stay & Pay</p>
+						</div>
+						
+						<div id = "shopMenu">
+						
+							<div id = "buyMouse" class = "sideOption">
+								<p id = "mouseText" style = "position: relative; top: -16px; user-select: none;">Mouse</p>
+							</div>
+							
+							<div class = "sideOption">
+								<p style = "position: relative; top: -16px; user-select: none;">Logger</p>
+							</div>
+						
+						</div>
+						
+					</main>
 				</div>
 				
 				<div id = "news">
-				6
+				
+					<header class = "windowHeader nanum-gothic-regular">
+						<p>NEWS!!!</p>
+					</header>
+					
+					<main id = "newsText">
+						<p id = "realText" class = "pcFont">Welcome Back.</p>
+					</main>
 				</div>
 
 			</main>
 
 			<footer>
-				<p>&#169;Evan Rosato 2024</p>
+				<p class = "pcFont">&#169;Evan Rosato 2024</p>
 			</footer>
 
 
 
 		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				
+				var cash = 0.50;
+				var clickPow = 0.01;
+				
+				var cashUpdate;
+				
+				var newsWidth = $("#newsText").css("width");
+				var newsText = ["BREAKING: Pharmacies beginning to put entire stores in cases. \"They can't steal anything if they can't get in.\".",
+				"You must be new here.", "BREAKING: Ireland is facing another famine. The culprits? Scotland. \"We figured it was our turn.\"",
+				"BREAKING: Scientists claim 'Hexagon dancing' is far more efficient than Square Dancing.", "BREAKING: Stepping on cracks now 5% less likely to result in maternal spinal fracture, study finds.",
+				"It's never enough, is it?", "BREAKING: Stupid fucking idiot forgot to add semicolon. Entire piece of shit program breaks.",
+				"BREAKING: Scope of college final drastically reduced as reality slowly hits... again.", "BREAKING: Whole new generation of grandparents entering public domain.",
+				"Ready?", "BREAKING: Idle games dying faster than expected; Gamers probably not going to care for at least 3-5 years."];
+				
+				var mouseCost = 1.00;
+				var miceNum = 0;
+				
+				$("#mouseText").text("(" + miceNum + ") Mouse - Cost: $" + mouseCost);
+				
+				cashUpdate = setInterval(updateCash, 16);
+				
+				timeUpdate = setInterval(updateTime, 16);
+				
+				newsScroll();
+				
+				$("#clicky").click(function() {
+					newCash = parseFloat(cash);
+					newClick = parseFloat(clickPow);
+					
+					cash = newCash += newClick;
+				});
+				
+				$("#shopButton").click(function() {
+					$(".mainButton").css("display", "none");
+					
+					$("#shopMenu").css("display", "block");
+					$("#backButton").css("display","inline");
+				});
+				
+				$("#backButton").click(function() {
+					$("#backButton").css("display", "none");
+					$("#shopMenu").css("display", "none");
+					
+					$(".mainButton").css("display","block");
+				});
+				
+				$("#buyMouse").click(function() {
+				
+					if (parseFloat(cash) >= parseFloat(mouseCost)) {
+					
+						cash -= mouseCost;
+						clickPow += 0.01;
+						mouseCost *= 1.15;
+						
+						miceNum++;
+					
+					}
+					
+					$("#mouseText").text("(" + miceNum + ") Mouse - Cost: $" + mouseCost);
+				
+				});
+				
+				function updateCash() {
+				
+					$("#cashDisplay").text("$" + parseFloat(cash).toFixed(2));
+				}
+				
+				function updateTime() {
+				
+					$("#timeText").text(new Date($.now()));
+				}
+				
+				function newsScroll() {
+				
+					var newsWidth = $("#newsText").css("width");
+					var mainWidth = $("#bigMain").css("width");
+					
+					var newsMain = parseInt(newsWidth) * -1;
+					var newMain = parseInt(mainWidth);
+					
+					var newsNow = newsMain - newMain;
+					
+					newsNow = newsNow.toString() + "px";
+				
+					$("#newsText").css("left", "2000px");
+				
+					$("#newsText").animate({left: newsNow},
+					{duration: 15000, easing: "linear", complete: function(){newsUpdate()} });
+				
+				}
+				
+				function newsUpdate() {
+				
+					var stories = newsText.length;
+				
+					var randNews = Math.floor(Math.random() * stories);
+				
+					$("#realText").text(newsText[randNews]);
+					//$("#newsText").addClass("pcFont");
+					
+					newsScroll();
+				}
+			
+			});
+		</script>
   
 
 	</body>
